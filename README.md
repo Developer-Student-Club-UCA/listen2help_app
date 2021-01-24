@@ -15,6 +15,12 @@ A Flutter application to help therapists connect with their patients.
 
 ## Getting Started
 
+First, get all the dependencies running:
+
+```sh
+flutter pub get
+```
+
 ### Change project environment
 
 #### Quick access
@@ -47,7 +53,7 @@ Make sure to run `flutter clean` before compiling.
 
 Note: Android version require key.properties file (located at android folder) and .jks file.
 
-More info about `dart-define`: https://itnext.io/flutter-1-17-no-more-flavors-no-more-ios-schemas-command-argument-that-solves-everything-8b145ed4285d.
+More info about `dart-define` [here](https://itnext.io/flutter-1-17-no-more-flavors-no-more-ios-schemas-command-argument-that-solves-everything-8b145ed4285d).
 
 ### Update version number
 
@@ -58,7 +64,7 @@ $ flutter run
 $ flutter build
 ```
 
-More info: https://medium.com/@ralphbergmann/versioning-with-flutter-299869e68af4
+More info about versioning [here](https://medium.com/@ralphbergmann/versioning-with-flutter-299869e68af4).
 
 ### Generate installer files
 
@@ -69,7 +75,8 @@ To generate android `apk` installer files, run:
 ```sh
 $ flutter build apk
 ```
-more info: https://flutter.io/docs/deployment/android
+
+More info about deployments on Android [here](https://flutter.io/docs/deployment/android).
 
 #### iOS
 
@@ -85,7 +92,7 @@ Export option
 Exporting folder > Runner.ipa
 ```
 
-More info: https://flutter.io/docs/deployment/ios
+More info about deployments on iOS [here](https://flutter.io/docs/deployment/ios).
 
 ### Localization
 
@@ -93,9 +100,9 @@ On your feature `/views` folder create an extra file for the localized strings i
 
 The file should be named `<name_of_the_view>.i18n.dart`.
 
-Sample for structure in https://pub.dev/packages/i18n_extension#translating-a-widget.
+Sample for i18n string structure [here](https://pub.dev/packages/i18n_extension#translating-a-widget).
 
-Full sample in https://github.com/marcglasberg/i18n_extension/tree/master/example/lib.
+Full sample [here](https://github.com/marcglasberg/i18n_extension/tree/master/example/lib).
 
 ### Generating app icons
 
@@ -106,7 +113,7 @@ $ flutter pub run flutter_launcher_icons:main
 
 ### Generating app assets
 
-You need to have FlutterGen installed on your computer, check the installation guide here: https://github.com/FlutterGen/flutter_gen.
+You need to have FlutterGen installed on your computer, check the installation guide [here](https://github.com/FlutterGen/flutter_gen).
 
 You must run this command every time you make a change on your assets to see it available on generated code.
 
