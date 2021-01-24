@@ -4,9 +4,9 @@ import 'package:errors/errors.dart';
 
 import '../repositories/iappointment_repository.dart';
 
-/// Request appointment usecase
+/// [RequestAppointment] usecase
 class RequestAppointment {
-  /// Example Addition constructor
+  /// Defines an appointment insertion to be accepted by a specialist
   RequestAppointment({
     @required IAppointmentRepository repository,
   })  : assert(repository != null),
