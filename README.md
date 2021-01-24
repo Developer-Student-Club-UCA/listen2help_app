@@ -108,6 +108,8 @@ Full sample [here](https://github.com/marcglasberg/i18n_extension/tree/master/ex
 
 #### Icons
 
+To generate new icons for the project, run these commands:
+
 ```sh
 $ flutter pub get
 $ flutter pub run flutter_launcher_icons:main
@@ -133,5 +135,5 @@ You need to run the following command to generate Freezed classes.
 $ flutter pub run build_runner build
 ```
 
-For mre info on how to create Freezed classes, you can check [here](http://pub.dev/packages/freezed).
+For more info on how to create Freezed classes, you can check [here](http://pub.dev/packages/freezed).
 
