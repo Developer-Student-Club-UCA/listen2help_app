@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:listen2help/src/features/authentication/views/login_page.i18n.dart';
+import 'package:package_info/package_info.dart';
 
-import '../../../core/providers/info_provider.dart';
+import '../../../core/providers/package_info_provider.dart';
+
+import 'login_page.i18n.dart';
 
 /// LoginPage to sign in to app.
 class LoginPage extends ConsumerWidget {
@@ -19,7 +21,10 @@ class LoginPage extends ConsumerWidget {
       appBar: AppBar(title: Text(kLoginSampleMessage.i18n)),
       body: Center(
         child: watch(packageInfoProvider).when(
-          data: (data) => Text('$data'),
+          data: (PackageInfo data) => Text(
+            '${data.version}',
+            style: Theme.of(context).textTheme.headline1,
+          ),
           loading: () => const CircularProgressIndicator(),
           error: (error, _) => Text('$error'),
         ),
