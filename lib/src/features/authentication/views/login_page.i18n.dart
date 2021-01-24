@@ -1,6 +1,6 @@
 import 'package:i18n_extension/i18n_extension.dart';
 
-/// TODO: Place your english string constants here
+/// Place your english string constants here
 const kLoginSampleMessage = 'Login sample';
 
 /// This extension method contains all

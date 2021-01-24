@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:package_info/package_info.dart';
 
 import '../../../core/providers/package_info_provider.dart';
 
