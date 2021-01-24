@@ -1,62 +1,54 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 
+import 'package:i18n_extension/i18n_widget.dart';
+
+import 'core/globals/environment.dart';
+import 'features/authentication/views/login_page.dart';
+
+/// This is the starter point of the app
+/// It contains most of the general app config
 class Listen2HelpApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    if (EnvironmentConfig.isRelease) {
+      return const _Core();
+    } else {
+      return Directionality(
+        textDirection: TextDirection.ltr,
+        child: Banner(
+          color: Colors.primaries[EnvironmentConfig.environment.index],
+          location: BannerLocation.topStart,
+          message: '${EnvironmentConfig.env}',
+          child: const _Core(),
+        ),
+      );
+    }
+  }
+}
+
+class _Core extends StatelessWidget {
+  const _Core({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Listen2Help',
+      localizationsDelegates: [
+        GlobalCupertinoLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: [
+        const Locale('es', 'ES'),
+        const Locale('en', 'US'),
+      ],
       theme: ThemeData(
         primarySwatch: Colors.blue,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: MyHomePage(title: 'Flutter Demo Home Page'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key key, this.title}) : super(key: key);
-
-  final String title;
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'You have pushed the button this many times:',
-            ),
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
-          ],
-        ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ),
+      home: I18n(child: LoginPage()),
+      debugShowCheckedModeBanner: false,
     );
   }
 }

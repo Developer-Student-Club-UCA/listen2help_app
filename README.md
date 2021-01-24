@@ -104,14 +104,16 @@ Sample for i18n string structure [here](https://pub.dev/packages/i18n_extension#
 
 Full sample [here](https://github.com/marcglasberg/i18n_extension/tree/master/example/lib).
 
-### Generating app icons
+### Generated code
+
+#### Icons
 
 ```sh
 $ flutter pub get
 $ flutter pub run flutter_launcher_icons:main
 ```
 
-### Generating app assets
+#### Assets
 
 You need to have FlutterGen installed on your computer, check the installation guide [here](https://github.com/FlutterGen/flutter_gen).
 
@@ -120,3 +122,16 @@ You must run this command every time you make a change on your assets to see it 
 ```sh
 $ fluttergen -c pubspec.yaml
 ```
+
+#### Freezed classes
+
+Freezed helps us generate unions/pattern-matching/copy capable classes.
+
+You need to run the following command to generate Freezed classes.
+
+```sh
+$ flutter pub run build_runner build
+```
+
+For mre info on how to create Freezed classes, you can check [here](http://pub.dev/packages/freezed).
+
