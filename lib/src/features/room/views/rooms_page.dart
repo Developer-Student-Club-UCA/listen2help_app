@@ -12,8 +12,12 @@ class RoomsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Text('This is RoomsPage'),
+      body: CustomScrollView(
+        slivers: [
+          SliverAppBar(
+            title: Text(route),
+          ),
+        ],
       ),
     );
   }

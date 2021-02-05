@@ -2,8 +2,12 @@ import 'package:flutter/material.dart';
 
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
+import '../../appointment/views/appointments_page.dart';
+import '../../profile/views/profile_page.dart';
+import '../../room/views/rooms_page.dart';
+
 /// HomePage to display main pages
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   /// Static named route for page
   static const String route = 'Home';
 
@@ -11,10 +15,24 @@ class HomePage extends StatelessWidget {
   static Route go() => MaterialPageRoute<void>(builder: (_) => HomePage());
 
   @override
+  _HomePageState createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int currentIndex = 0;
+
+  void changeIndex(int index) => setState(() => currentIndex = index);
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: IndexedStack(
-        children: [],
+        index: currentIndex,
+        children: [
+          RoomsPage(),
+          AppointmentsPage(),
+          ProfilePage(),
+        ],
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(FontAwesomeIcons.plus),
@@ -22,7 +40,9 @@ class HomePage extends StatelessWidget {
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
       bottomNavigationBar: BottomNavigationBar(
-        elevation: 0,
+        onTap: changeIndex,
+        currentIndex: currentIndex,
+        selectedItemColor: Theme.of(context).primaryColor,
         items: [
           const BottomNavigationBarItem(
             label: '',
