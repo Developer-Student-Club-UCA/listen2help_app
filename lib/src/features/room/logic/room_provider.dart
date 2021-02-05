@@ -1,16 +1,16 @@
-// import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-// import 'room_state.dart';
+import 'room_state.dart';
 
-// part 'room_state_notifier.dart';
+part 'room_state_notifier.dart';
 
-// /// Provider to use the RoomStateNotifier
-// final roomNotifierProvider = StateNotifierProvider(
-//   (ref) => RoomNotifier(ref),
-// );
+/// Provider to use the RoomStateNotifier
+final roomNotifierProvider = StateNotifierProvider(
+  (ref) => RoomNotifier(ref),
+);
 
-// /// Repositories Providers
-// /// TODO: Create Repositories Providers
+/// Repositories Providers
+/// TODO: Create Repositories Providers
 
-// /// Use Cases Providers
-// /// TODO: Create Use Cases Providers
+/// Use Cases Providers
+/// TODO: Create Use Cases Providers

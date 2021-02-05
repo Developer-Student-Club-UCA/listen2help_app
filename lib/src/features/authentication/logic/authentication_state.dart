@@ -2,11 +2,11 @@ import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'authentication_state.freezed.dart';
 
-/// Represents a common state class used to build the UI
+/// Defines all the possible states for the authentication
 @freezed
 abstract class AuthenticationState with _$AuthenticationState {
   /// Data is present state, also default case
-  const factory AuthenticationState(int value) = Data;
+  const factory AuthenticationState() = Data;
 
   /// Data is loading state
   const factory AuthenticationState.loading() = Loading;

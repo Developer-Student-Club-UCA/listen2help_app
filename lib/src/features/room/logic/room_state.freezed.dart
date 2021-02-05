@@ -1,7 +1,7 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies
 
-part of 'authentication_state.dart';
+part of 'room_state.dart';
 
 // **************************************************************************
 // FreezedGenerator
@@ -10,12 +10,17 @@ part of 'authentication_state.dart';
 T _$identity<T>(T value) => value;
 
 /// @nodoc
-class _$AuthenticationStateTearOff {
-  const _$AuthenticationStateTearOff();
+class _$RoomStateTearOff {
+  const _$RoomStateTearOff();
 
 // ignore: unused_element
   Data call() {
     return const Data();
+  }
+
+// ignore: unused_element
+  Initial initial() {
+    return const Initial();
   }
 
 // ignore: unused_element
@@ -33,19 +38,21 @@ class _$AuthenticationStateTearOff {
 
 /// @nodoc
 // ignore: unused_element
-const $AuthenticationState = _$AuthenticationStateTearOff();
+const $RoomState = _$RoomStateTearOff();
 
 /// @nodoc
-mixin _$AuthenticationState {
+mixin _$RoomState {
   @optionalTypeArgs
   TResult when<TResult extends Object>(
     TResult $default(), {
+    @required TResult initial(),
     @required TResult loading(),
     @required TResult error(String message),
   });
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>(
     TResult $default(), {
+    TResult initial(),
     TResult loading(),
     TResult error(String message),
     @required TResult orElse(),
@@ -53,12 +60,14 @@ mixin _$AuthenticationState {
   @optionalTypeArgs
   TResult map<TResult extends Object>(
     TResult $default(Data value), {
+    @required TResult initial(Initial value),
     @required TResult loading(Loading value),
     @required TResult error(Error value),
   });
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>(
     TResult $default(Data value), {
+    TResult initial(Initial value),
     TResult loading(Loading value),
     TResult error(Error value),
     @required TResult orElse(),
@@ -66,20 +75,18 @@ mixin _$AuthenticationState {
 }
 
 /// @nodoc
-abstract class $AuthenticationStateCopyWith<$Res> {
-  factory $AuthenticationStateCopyWith(
-          AuthenticationState value, $Res Function(AuthenticationState) then) =
-      _$AuthenticationStateCopyWithImpl<$Res>;
+abstract class $RoomStateCopyWith<$Res> {
+  factory $RoomStateCopyWith(RoomState value, $Res Function(RoomState) then) =
+      _$RoomStateCopyWithImpl<$Res>;
 }
 
 /// @nodoc
-class _$AuthenticationStateCopyWithImpl<$Res>
-    implements $AuthenticationStateCopyWith<$Res> {
-  _$AuthenticationStateCopyWithImpl(this._value, this._then);
+class _$RoomStateCopyWithImpl<$Res> implements $RoomStateCopyWith<$Res> {
+  _$RoomStateCopyWithImpl(this._value, this._then);
 
-  final AuthenticationState _value;
+  final RoomState _value;
   // ignore: unused_field
-  final $Res Function(AuthenticationState) _then;
+  final $Res Function(RoomState) _then;
 }
 
 /// @nodoc
@@ -89,7 +96,7 @@ abstract class $DataCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$DataCopyWithImpl<$Res> extends _$AuthenticationStateCopyWithImpl<$Res>
+class _$DataCopyWithImpl<$Res> extends _$RoomStateCopyWithImpl<$Res>
     implements $DataCopyWith<$Res> {
   _$DataCopyWithImpl(Data _value, $Res Function(Data) _then)
       : super(_value, (v) => _then(v as Data));
@@ -104,7 +111,7 @@ class _$Data implements Data {
 
   @override
   String toString() {
-    return 'AuthenticationState()';
+    return 'RoomState()';
   }
 
   @override
@@ -119,10 +126,12 @@ class _$Data implements Data {
   @optionalTypeArgs
   TResult when<TResult extends Object>(
     TResult $default(), {
+    @required TResult initial(),
     @required TResult loading(),
     @required TResult error(String message),
   }) {
     assert($default != null);
+    assert(initial != null);
     assert(loading != null);
     assert(error != null);
     return $default();
@@ -132,6 +141,7 @@ class _$Data implements Data {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>(
     TResult $default(), {
+    TResult initial(),
     TResult loading(),
     TResult error(String message),
     @required TResult orElse(),
@@ -147,10 +157,12 @@ class _$Data implements Data {
   @optionalTypeArgs
   TResult map<TResult extends Object>(
     TResult $default(Data value), {
+    @required TResult initial(Initial value),
     @required TResult loading(Loading value),
     @required TResult error(Error value),
   }) {
     assert($default != null);
+    assert(initial != null);
     assert(loading != null);
     assert(error != null);
     return $default(this);
@@ -160,6 +172,7 @@ class _$Data implements Data {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>(
     TResult $default(Data value), {
+    TResult initial(Initial value),
     TResult loading(Loading value),
     TResult error(Error value),
     @required TResult orElse(),
@@ -172,8 +185,108 @@ class _$Data implements Data {
   }
 }
 
-abstract class Data implements AuthenticationState {
+abstract class Data implements RoomState {
   const factory Data() = _$Data;
+}
+
+/// @nodoc
+abstract class $InitialCopyWith<$Res> {
+  factory $InitialCopyWith(Initial value, $Res Function(Initial) then) =
+      _$InitialCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$InitialCopyWithImpl<$Res> extends _$RoomStateCopyWithImpl<$Res>
+    implements $InitialCopyWith<$Res> {
+  _$InitialCopyWithImpl(Initial _value, $Res Function(Initial) _then)
+      : super(_value, (v) => _then(v as Initial));
+
+  @override
+  Initial get _value => super._value as Initial;
+}
+
+/// @nodoc
+class _$Initial implements Initial {
+  const _$Initial();
+
+  @override
+  String toString() {
+    return 'RoomState.initial()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is Initial);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>(
+    TResult $default(), {
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult error(String message),
+  }) {
+    assert($default != null);
+    assert(initial != null);
+    assert(loading != null);
+    assert(error != null);
+    return initial();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>(
+    TResult $default(), {
+    TResult initial(),
+    TResult loading(),
+    TResult error(String message),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (initial != null) {
+      return initial();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>(
+    TResult $default(Data value), {
+    @required TResult initial(Initial value),
+    @required TResult loading(Loading value),
+    @required TResult error(Error value),
+  }) {
+    assert($default != null);
+    assert(initial != null);
+    assert(loading != null);
+    assert(error != null);
+    return initial(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>(
+    TResult $default(Data value), {
+    TResult initial(Initial value),
+    TResult loading(Loading value),
+    TResult error(Error value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (initial != null) {
+      return initial(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Initial implements RoomState {
+  const factory Initial() = _$Initial;
 }
 
 /// @nodoc
@@ -183,8 +296,7 @@ abstract class $LoadingCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$LoadingCopyWithImpl<$Res>
-    extends _$AuthenticationStateCopyWithImpl<$Res>
+class _$LoadingCopyWithImpl<$Res> extends _$RoomStateCopyWithImpl<$Res>
     implements $LoadingCopyWith<$Res> {
   _$LoadingCopyWithImpl(Loading _value, $Res Function(Loading) _then)
       : super(_value, (v) => _then(v as Loading));
@@ -199,7 +311,7 @@ class _$Loading implements Loading {
 
   @override
   String toString() {
-    return 'AuthenticationState.loading()';
+    return 'RoomState.loading()';
   }
 
   @override
@@ -214,10 +326,12 @@ class _$Loading implements Loading {
   @optionalTypeArgs
   TResult when<TResult extends Object>(
     TResult $default(), {
+    @required TResult initial(),
     @required TResult loading(),
     @required TResult error(String message),
   }) {
     assert($default != null);
+    assert(initial != null);
     assert(loading != null);
     assert(error != null);
     return loading();
@@ -227,6 +341,7 @@ class _$Loading implements Loading {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>(
     TResult $default(), {
+    TResult initial(),
     TResult loading(),
     TResult error(String message),
     @required TResult orElse(),
@@ -242,10 +357,12 @@ class _$Loading implements Loading {
   @optionalTypeArgs
   TResult map<TResult extends Object>(
     TResult $default(Data value), {
+    @required TResult initial(Initial value),
     @required TResult loading(Loading value),
     @required TResult error(Error value),
   }) {
     assert($default != null);
+    assert(initial != null);
     assert(loading != null);
     assert(error != null);
     return loading(this);
@@ -255,6 +372,7 @@ class _$Loading implements Loading {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>(
     TResult $default(Data value), {
+    TResult initial(Initial value),
     TResult loading(Loading value),
     TResult error(Error value),
     @required TResult orElse(),
@@ -267,7 +385,7 @@ class _$Loading implements Loading {
   }
 }
 
-abstract class Loading implements AuthenticationState {
+abstract class Loading implements RoomState {
   const factory Loading() = _$Loading;
 }
 
@@ -279,7 +397,7 @@ abstract class $ErrorCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$ErrorCopyWithImpl<$Res> extends _$AuthenticationStateCopyWithImpl<$Res>
+class _$ErrorCopyWithImpl<$Res> extends _$RoomStateCopyWithImpl<$Res>
     implements $ErrorCopyWith<$Res> {
   _$ErrorCopyWithImpl(Error _value, $Res Function(Error) _then)
       : super(_value, (v) => _then(v as Error));
@@ -306,7 +424,7 @@ class _$Error implements Error {
 
   @override
   String toString() {
-    return 'AuthenticationState.error(message: $message)';
+    return 'RoomState.error(message: $message)';
   }
 
   @override
@@ -330,10 +448,12 @@ class _$Error implements Error {
   @optionalTypeArgs
   TResult when<TResult extends Object>(
     TResult $default(), {
+    @required TResult initial(),
     @required TResult loading(),
     @required TResult error(String message),
   }) {
     assert($default != null);
+    assert(initial != null);
     assert(loading != null);
     assert(error != null);
     return error(message);
@@ -343,6 +463,7 @@ class _$Error implements Error {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object>(
     TResult $default(), {
+    TResult initial(),
     TResult loading(),
     TResult error(String message),
     @required TResult orElse(),
@@ -358,10 +479,12 @@ class _$Error implements Error {
   @optionalTypeArgs
   TResult map<TResult extends Object>(
     TResult $default(Data value), {
+    @required TResult initial(Initial value),
     @required TResult loading(Loading value),
     @required TResult error(Error value),
   }) {
     assert($default != null);
+    assert(initial != null);
     assert(loading != null);
     assert(error != null);
     return error(this);
@@ -371,6 +494,7 @@ class _$Error implements Error {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object>(
     TResult $default(Data value), {
+    TResult initial(Initial value),
     TResult loading(Loading value),
     TResult error(Error value),
     @required TResult orElse(),
@@ -383,7 +507,7 @@ class _$Error implements Error {
   }
 }
 
-abstract class Error implements AuthenticationState {
+abstract class Error implements RoomState {
   const factory Error([String message]) = _$Error;
 
   String get message;

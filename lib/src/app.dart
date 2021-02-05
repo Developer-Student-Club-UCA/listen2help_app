@@ -4,7 +4,8 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:i18n_extension/i18n_widget.dart';
 
 import 'core/globals/environment.dart';
-import 'features/authentication/views/login_page.dart';
+import 'features/home/views/home_page.dart';
+// import 'features/authentication/views/login_page.dart';
 
 /// This is the starter point of the app
 /// It contains most of the general app config
@@ -47,7 +48,7 @@ class _Core extends StatelessWidget {
         primarySwatch: Colors.indigo,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: I18n(child: LoginPage()),
+      home: I18n(child: HomePage()),
       debugShowCheckedModeBanner: false,
     );
   }
