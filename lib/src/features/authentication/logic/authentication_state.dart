@@ -1,5 +1,3 @@
-// * Sample Freezed states
-
 import 'package:freezed_annotation/freezed_annotation.dart';
 
 part 'authentication_state.freezed.dart';

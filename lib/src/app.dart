@@ -44,7 +44,7 @@ class _Core extends StatelessWidget {
         const Locale('en', 'US'),
       ],
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.indigo,
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: I18n(child: LoginPage()),
