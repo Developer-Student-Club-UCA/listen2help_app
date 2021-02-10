@@ -1,12 +1,11 @@
-name: appointment
-description: Dart package to manage appointment data and domain layers.
+name: avatar
+description: Dart package to manage avatar data and domain layers.
 version: 0.0.1+1
 
 environment:
   sdk: ">=2.9.0 <3.0.0"
 
 dependencies:
-  # Scope Packages
   errors:
     git:
       url: git://github.com/NoScopeDevs/errors
@@ -14,18 +13,13 @@ dependencies:
     git:
       url: git://github.com/NoScopeDevs/network_manager
 
-  avatar:
-    path: ../avatar
-  cypher:
-    path: ../cypher
-
-  equatable: ^1.2.6
   dartz: ^0.9.2
+  equatable: ^1.2.6
+  json_annotation: ^3.1.1
   meta:
   path:
 
 dev_dependencies:
-  # code generators
   build_runner:
   json_serializable: ^3.5.1
 

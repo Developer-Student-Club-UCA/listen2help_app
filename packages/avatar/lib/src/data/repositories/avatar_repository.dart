@@ -5,10 +5,10 @@ import '../../domain/domain.dart';
 import '../datasources/local_data_source.dart';
 import '../datasources/remote_data_source.dart';
 
-/// Appointment repository implementation
-class AppointmentRepository implements IAppointmentRepository {
-  /// Appointment repository constructor
-  AppointmentRepository({
+/// Avatar repository implementation
+class AvatarRepository implements IAvatarRepository {
+  /// Avatar repository constructor
+  AvatarRepository({
     @required this.localDataSource,
     @required this.remoteDataSource,
   })  : assert(localDataSource != null),
@@ -17,5 +17,5 @@ class AppointmentRepository implements IAppointmentRepository {
   final LocalDataSource localDataSource;
   final RemoteDataSource remoteDataSource;
 
-  // TODO: Implement [IAppointmentRepository] methods
+  // TODO: Implement [IAvatarRepository] methods
 }

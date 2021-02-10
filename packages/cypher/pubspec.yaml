@@ -1,5 +1,5 @@
-name: appointment
-description: Dart package to manage appointment data and domain layers.
+name: cypher
+description: Dart package to manage cypher data and domain layers.
 version: 0.0.1+1
 
 environment:
@@ -14,13 +14,9 @@ dependencies:
     git:
       url: git://github.com/NoScopeDevs/network_manager
 
-  avatar:
-    path: ../avatar
-  cypher:
-    path: ../cypher
-
   equatable: ^1.2.6
   dartz: ^0.9.2
+  json_annotation: ^3.1.1
   meta:
   path:
 

@@ -38,6 +38,7 @@ class _HomePageState extends State<HomePage> {
       ),
       floatingActionButton: currentIndex == 1
           ? FloatingActionButton(
+              elevation: 0,
               backgroundColor: Theme.of(context).scaffoldBackgroundColor,
               child: FaIcon(
                 FontAwesomeIcons.plus,

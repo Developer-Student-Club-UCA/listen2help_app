@@ -14,9 +14,17 @@ dependencies:
   flutter_localizations:
     sdk: flutter
 
+  # Feature packages
   authentication:
     path: packages/authentication
+  appointment:
+    path: packages/appointment
+  avatar:
+    path: packages/avatar
+  cypher:
+    path: packages/cypher
 
+  # Scope packages
   network_manager:
     git:
       url: git://github.com/NoScopeDevs/network_manager
