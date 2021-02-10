@@ -14,3 +14,4 @@ analyzer:
     - "**/*.freezed.dart"
     - "**/*.g.dart"
     - "lib/**.gen.dart"
+    - "lib/**.i18n.dart"

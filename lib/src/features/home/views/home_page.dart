@@ -25,6 +25,8 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
     return Scaffold(
       body: IndexedStack(
         index: currentIndex,
@@ -34,11 +36,16 @@ class _HomePageState extends State<HomePage> {
           ProfilePage(),
         ],
       ),
-      floatingActionButton: FloatingActionButton(
-        child: const Icon(FontAwesomeIcons.plus),
-        onPressed: () {},
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerFloat,
+      floatingActionButton: currentIndex == 1
+          ? FloatingActionButton(
+              backgroundColor: Theme.of(context).scaffoldBackgroundColor,
+              child: FaIcon(
+                FontAwesomeIcons.plus,
+                color: theme.primaryColor,
+              ),
+              onPressed: () {},
+            )
+          : null,
       bottomNavigationBar: BottomNavigationBar(
         onTap: changeIndex,
         currentIndex: currentIndex,

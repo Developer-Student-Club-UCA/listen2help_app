@@ -12,7 +12,8 @@ class ProfilePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CustomScrollView(
+      backgroundColor: Theme.of(context).primaryColor,
+      body: const CustomScrollView(
         slivers: [
           SliverAppBar(
             title: Text(route),
