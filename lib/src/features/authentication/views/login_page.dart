@@ -1,6 +1,10 @@
+import 'dart:wasm';
+
 import 'package:flutter/material.dart';
 
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:listen2help/src/features/authentication/widgets/option_card.dart';
 
 import '../../../core/providers/package_info_provider.dart';
 
@@ -17,15 +21,33 @@ class LoginPage extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ScopedReader watch) {
     return Scaffold(
-      appBar: AppBar(title: Text(kLoginSampleMessage.i18n)),
+      //appBar: AppBar(title: Text(kLoginSampleMessage.i18n)),
       body: Center(
-        child: watch(packageInfoProvider).when(
-          data: (PackageInfo data) => Text(
-            '${data.version}',
-            style: Theme.of(context).textTheme.headline1,
-          ),
-          loading: () => const CircularProgressIndicator(),
-          error: (error, _) => Text('$error'),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Text(
+              'AUTORIZATION',
+              style: TextStyle(
+                color: Theme.of(context).primaryColorDark,
+                fontSize: 20,
+              ),
+            ),
+            SizedBox(height: 30),
+            OptionCard(
+              text: 'I am a psychologist',              
+              icon: FontAwesomeIcons.handHoldingMedical,
+              elementColors: Theme.of(context).primaryColor,
+              onPressed: (){},
+            ),
+            SizedBox(height: 30),
+            OptionCard(
+              text: 'I am a patient',
+              icon: FontAwesomeIcons.headSideVirus,
+              elementColors: Theme.of(context).accentColor,
+              onPressed: () {},
+            ),
+          ],
         ),
       ),
     );
