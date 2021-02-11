@@ -5,16 +5,28 @@ import '../../domain/entities/avatar.dart';
 
 part 'avatar_model.g.dart';
 
-@JsonSerializable(nullable: false)
-class AvatarModel extends Avatar {
+@JsonSerializable()
+class AvatarModel implements Avatar {
   AvatarModel({
-    @required String id,
-    @required String photo,
-  }) : super(id: id, photo: photo);
+    @required this.id,
+    @required this.photo,
+  });
 
   factory AvatarModel.fromJson(Map<String, dynamic> json) {
     return _$AvatarModelFromJson(json);
   }
 
   Map<String, dynamic> toJson() => _$AvatarModelToJson(this);
+
+  @override
+  final String id;
+
+  @override
+  final String photo;
+
+  @override
+  List<Object> get props => [id, photo];
+
+  @override
+  bool get stringify => true;
 }

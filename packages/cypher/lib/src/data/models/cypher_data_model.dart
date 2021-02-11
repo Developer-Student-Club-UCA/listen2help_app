@@ -5,7 +5,7 @@ import '../../domain/entities/cypher_data.dart';
 
 part 'cypher_data_model.g.dart';
 
-@JsonSerializable(nullable: false)
+@JsonSerializable()
 class CypherDataModel extends CypherData {
   CypherDataModel({
     @required String id,

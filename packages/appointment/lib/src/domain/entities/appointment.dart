@@ -3,7 +3,10 @@ import 'package:equatable/equatable.dart';
 import 'package:client/client.dart';
 import 'package:cypher/cypher.dart';
 
-class Appointment extends Equatable {
+export 'package:client/client.dart';
+export 'package:cypher/cypher.dart';
+
+abstract class Appointment extends Equatable {
   Appointment({
     this.deviceId,
     this.head,

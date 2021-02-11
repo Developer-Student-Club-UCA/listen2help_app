@@ -4,30 +4,24 @@ import 'package:errors/errors.dart';
 
 import 'package:meta/meta.dart';
 
-import '../../domain/domain.dart';
+import '../../domain/domain.dart' show IAppointmentRepository;
 
-import '../datasources/local_data_source.dart';
 import '../datasources/remote_data_source.dart';
+import '../models/appointment_model.dart';
 
 /// Appointment repository implementation
 class AppointmentRepository implements IAppointmentRepository {
   /// Appointment repository constructor
   AppointmentRepository({
-    @required this.localDataSource,
     @required this.remoteDataSource,
-  })  : assert(localDataSource != null),
-        assert(remoteDataSource != null);
+  }) : assert(remoteDataSource != null);
 
-  final LocalDataSource localDataSource;
   final RemoteDataSource remoteDataSource;
 
   // TODO: Implement [IAppointmentRepository] methods
 
   @override
-  Future<Either<Failure, List<Appointment>>> getAppointments() {
-    // TODO: implement getAppointments
-    throw UnimplementedError();
-  }
+  Future<Either<Failure, List<AppointmentModel>>> getAppointments() {}
 
   @override
   Future<Either<Failure, void>> requestAppointment(

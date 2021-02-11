@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 
-class CypherData extends Equatable {
+abstract class CypherData extends Equatable {
   CypherData({
     @required this.id,
     @required this.data,
