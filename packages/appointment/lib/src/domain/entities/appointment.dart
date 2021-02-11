@@ -10,12 +10,14 @@ export 'package:cypher/cypher.dart' show CypherData, CypherDataModel;
 abstract class Appointment extends Equatable {
   Appointment({
     this.deviceId,
+    this.createdDate,
     this.head,
     this.dossierKey,
     this.dossierData,
   });
 
   final String deviceId;
+  final DateTime createdDate;
   final UserProfileAnonimHead head;
   final CypherData dossierKey;
   final CypherData dossierData;

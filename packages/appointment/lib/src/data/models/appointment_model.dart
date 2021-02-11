@@ -9,6 +9,7 @@ part 'appointment_model.g.dart';
 class AppointmentModel implements Appointment {
   AppointmentModel({
     @required this.deviceId,
+    @required this.createdDate,
     @required this.head,
     @required this.dossierKey,
     @required this.dossierData,
@@ -22,6 +23,8 @@ class AppointmentModel implements Appointment {
 
   @override
   final String deviceId;
+  @override
+  final DateTime createdDate;
   @override
   final UserProfileAnonimHeadModel head;
   @override
