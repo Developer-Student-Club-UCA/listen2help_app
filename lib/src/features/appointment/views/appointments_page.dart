@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 /// ! Remove these 2 imports in production
 import 'package:appointment/appointment.dart';
 import 'package:avatar/avatar.dart';
+import 'package:listen2help/src/features/appointment/views/appointments_page.i18n.dart';
 
 import 'widgets/widgets.dart';
 
@@ -55,9 +56,7 @@ class AppointmentsPage extends StatelessWidget {
       backgroundColor: Theme.of(context).primaryColor,
       body: CustomScrollView(
         slivers: [
-          const SliverAppBar(
-            title: Text(route),
-          ),
+          SliverAppBar(title: Text(kAppointmentsMessage.i18n)),
           SliverList(
             delegate: SliverChildListDelegate([
               for (final appointment in appointments)

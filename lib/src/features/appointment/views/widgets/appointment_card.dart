@@ -30,7 +30,7 @@ class AppointmentCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(15),
         ),
         child: Padding(
-          padding: const EdgeInsets.only(top: 10),
+          padding: const EdgeInsets.only(top: 15),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -40,38 +40,68 @@ class AppointmentCard extends StatelessWidget {
                   backgroundColor: Colors.transparent,
                 ),
                 title: Text(appointment.head.alias),
-                trailing: Column(
-                  mainAxisSize: MainAxisSize.min,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    const Icon(FontAwesomeIcons.calendarDay),
-                    const SizedBox(height: 5),
-                    Text(DateExtension.simplify(appointment.createdDate)),
-                  ],
-                ),
+                trailing: _Creation(date: appointment.createdDate),
               ),
               const SizedBox(height: 15),
-              Material(
-                shape: const RoundedRectangleBorder(
-                  borderRadius: BorderRadius.vertical(
-                    bottom: Radius.circular(15),
-                  ),
-                ),
-                color: Theme.of(context).primaryColorLight,
-                child: InkWell(
-                  child: Padding(
-                    padding: const EdgeInsets.all(15),
-                    child: Text(
-                      kViewDetailsMessage.i18n,
-                      textAlign: TextAlign.center,
-                    ),
-                  ),
-                  onTap: () {},
-                ),
-              ),
+              const _Button(),
             ],
           ),
         ),
+      ),
+    );
+  }
+}
+
+class _Creation extends StatelessWidget {
+  const _Creation({
+    Key key,
+    @required this.date,
+  }) : super(key: key);
+
+  final DateTime date;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Icon(
+          FontAwesomeIcons.calendar,
+          color: theme.primaryColor,
+        ),
+        const SizedBox(height: 10),
+        Text(DateExtension.simplify(date)),
+      ],
+    );
+  }
+}
+
+class _Button extends StatelessWidget {
+  const _Button({Key key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+
+    return Material(
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(
+          bottom: Radius.circular(15),
+        ),
+      ),
+      color: theme.primaryColorLight,
+      child: InkWell(
+        child: Padding(
+          padding: const EdgeInsets.all(15),
+          child: Text(
+            kViewDetailsMessage.i18n,
+            textAlign: TextAlign.center,
+          ),
+        ),
+        onTap: () {},
       ),
     );
   }

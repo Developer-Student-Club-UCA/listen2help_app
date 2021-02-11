@@ -1,11 +1,16 @@
 import 'package:i18n_extension/i18n_extension.dart';
 
 const kViewDetailsMessage = 'View details';
+const kAppointmentsMessage = 'Appointments';
 
 /// This extension method contains all
 /// the strings for the Appointment view
 extension AppointmentStrings on String {
   static final _t = Translations('en_us') +
+      {
+        'en_us': kAppointmentsMessage,
+        'es_es': 'Solicitudes de cita',
+      } +
       {
         'en_us': kViewDetailsMessage,
         'es_es': 'Ver detalles',
