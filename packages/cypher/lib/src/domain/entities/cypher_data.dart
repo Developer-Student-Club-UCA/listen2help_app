@@ -3,7 +3,7 @@ import 'package:meta/meta.dart';
 
 abstract class CypherData extends Equatable {
   CypherData({
-    @required this.id,
+    this.id,
     @required this.data,
   });
 

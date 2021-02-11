@@ -19,6 +19,8 @@ dependencies:
     path: packages/authentication
   appointment:
     path: packages/appointment
+  avatar:
+    path: packages/avatar
   client:
     path: packages/client
 

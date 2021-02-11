@@ -8,7 +8,7 @@ part 'cypher_data_model.g.dart';
 @JsonSerializable()
 class CypherDataModel extends CypherData {
   CypherDataModel({
-    @required String id,
+    String id,
     @required String data,
   }) : super(id: id, data: data);
 

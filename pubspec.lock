@@ -51,7 +51,7 @@ packages:
     source: path
     version: "1.0.0"
   avatar:
-    dependency: transitive
+    dependency: "direct main"
     description:
       path: "packages/avatar"
       relative: true
