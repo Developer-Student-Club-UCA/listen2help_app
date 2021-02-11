@@ -39,7 +39,6 @@ class EnvironmentConfig {
       case 'QA':
         return Environment.qa;
         break;
-
       case 'RELEASE':
         return Environment.release;
         break;
