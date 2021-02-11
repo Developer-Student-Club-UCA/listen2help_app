@@ -1,8 +1,8 @@
 // Export Entities
-// TODO: Export entities
+export 'entities/appointment.dart';
 
 // Export Repositories
 export 'repositories/iappointment_repository.dart';
 
 // Export Use Cases
-// TODO: Export use cases
+export 'usecases/get_appointments.dart';

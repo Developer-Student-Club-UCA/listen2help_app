@@ -1,7 +1,7 @@
 import 'package:equatable/equatable.dart';
 
+import 'package:client/client.dart';
 import 'package:cypher/cypher.dart';
-import 'package:avatar/avatar.dart';
 
 class Appointment extends Equatable {
   Appointment({
@@ -12,7 +12,7 @@ class Appointment extends Equatable {
   });
 
   final String deviceId;
-  final Head head;
+  final UserProfileAnonimHead head;
   final CypherData dossierKey;
   final CypherData dossierData;
 
@@ -22,21 +22,5 @@ class Appointment extends Equatable {
         head,
         dossierKey,
         dossierData,
-      ];
-}
-
-class Head extends Equatable {
-  Head({
-    this.alias,
-    this.avatar,
-  });
-
-  final String alias;
-  final Avatar avatar;
-
-  @override
-  List<Object> get props => [
-        alias,
-        avatar,
       ];
 }

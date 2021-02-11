@@ -4,8 +4,8 @@ import 'package:meta/meta.dart';
 
 import '../repositories/iappointment_repository.dart';
 
-class UseCase {
-  UseCase({@required this.repository}) : assert(repository != null);
+class GetAppointments {
+  GetAppointments({@required this.repository}) : assert(repository != null);
 
   final IAppointmentRepository repository;
 

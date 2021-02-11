@@ -45,28 +45,27 @@ mixin _$UserProfileAnonim {
   CypherDataModel get dossierData;
 
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
+  Result when<Result extends Object>({
     @required
-        TResult model(UserProfileAnonimHeadModel head,
+        Result model(UserProfileAnonimHeadModel head,
             CypherDataKeyModel dossierKey, CypherDataModel dossierData),
   });
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult model(UserProfileAnonimHeadModel head,
-        CypherDataKeyModel dossierKey, CypherDataModel dossierData),
-    @required TResult orElse(),
+  Result maybeWhen<Result extends Object>({
+    Result model(UserProfileAnonimHeadModel head, CypherDataKeyModel dossierKey,
+        CypherDataModel dossierData),
+    @required Result orElse(),
   });
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult model(UserProfileAnonimModel value),
+  Result map<Result extends Object>({
+    @required Result model(UserProfileAnonimModel value),
   });
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult model(UserProfileAnonimModel value),
-    @required TResult orElse(),
+  Result maybeMap<Result extends Object>({
+    Result model(UserProfileAnonimModel value),
+    @required Result orElse(),
   });
   Map<String, dynamic> toJson();
-  @JsonKey(ignore: true)
   $UserProfileAnonimCopyWith<UserProfileAnonim> get copyWith;
 }
 
@@ -198,7 +197,6 @@ class _$UserProfileAnonimModel implements UserProfileAnonimModel {
       const DeepCollectionEquality().hash(dossierKey) ^
       const DeepCollectionEquality().hash(dossierData);
 
-  @JsonKey(ignore: true)
   @override
   $UserProfileAnonimModelCopyWith<UserProfileAnonimModel> get copyWith =>
       _$UserProfileAnonimModelCopyWithImpl<UserProfileAnonimModel>(
@@ -206,9 +204,9 @@ class _$UserProfileAnonimModel implements UserProfileAnonimModel {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
+  Result when<Result extends Object>({
     @required
-        TResult model(UserProfileAnonimHeadModel head,
+        Result model(UserProfileAnonimHeadModel head,
             CypherDataKeyModel dossierKey, CypherDataModel dossierData),
   }) {
     assert(model != null);
@@ -217,10 +215,10 @@ class _$UserProfileAnonimModel implements UserProfileAnonimModel {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult model(UserProfileAnonimHeadModel head,
-        CypherDataKeyModel dossierKey, CypherDataModel dossierData),
-    @required TResult orElse(),
+  Result maybeWhen<Result extends Object>({
+    Result model(UserProfileAnonimHeadModel head, CypherDataKeyModel dossierKey,
+        CypherDataModel dossierData),
+    @required Result orElse(),
   }) {
     assert(orElse != null);
     if (model != null) {
@@ -231,8 +229,8 @@ class _$UserProfileAnonimModel implements UserProfileAnonimModel {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult model(UserProfileAnonimModel value),
+  Result map<Result extends Object>({
+    @required Result model(UserProfileAnonimModel value),
   }) {
     assert(model != null);
     return model(this);
@@ -240,9 +238,9 @@ class _$UserProfileAnonimModel implements UserProfileAnonimModel {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult model(UserProfileAnonimModel value),
-    @required TResult orElse(),
+  Result maybeMap<Result extends Object>({
+    Result model(UserProfileAnonimModel value),
+    @required Result orElse(),
   }) {
     assert(orElse != null);
     if (model != null) {
@@ -273,6 +271,5 @@ abstract class UserProfileAnonimModel implements UserProfileAnonim {
   @override
   CypherDataModel get dossierData;
   @override
-  @JsonKey(ignore: true)
   $UserProfileAnonimModelCopyWith<UserProfileAnonimModel> get copyWith;
 }

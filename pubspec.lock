@@ -51,7 +51,7 @@ packages:
     source: path
     version: "1.0.0"
   avatar:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "packages/avatar"
       relative: true
@@ -148,6 +148,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.2.0"
+  client:
+    dependency: "direct main"
+    description:
+      path: "packages/client"
+      relative: true
+    source: path
+    version: "0.0.1+1"
   clock:
     dependency: transitive
     description:
@@ -198,7 +205,7 @@ packages:
     source: hosted
     version: "1.0.0"
   cypher:
-    dependency: "direct main"
+    dependency: transitive
     description:
       path: "packages/cypher"
       relative: true

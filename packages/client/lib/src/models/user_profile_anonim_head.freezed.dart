@@ -42,25 +42,24 @@ mixin _$UserProfileAnonimHead {
   AvatarModel get avatar;
 
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult model(String alias, AvatarModel avatar),
+  Result when<Result extends Object>({
+    @required Result model(String alias, AvatarModel avatar),
   });
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult model(String alias, AvatarModel avatar),
-    @required TResult orElse(),
+  Result maybeWhen<Result extends Object>({
+    Result model(String alias, AvatarModel avatar),
+    @required Result orElse(),
   });
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult model(UserProfileAnonimHeadModel value),
+  Result map<Result extends Object>({
+    @required Result model(UserProfileAnonimHeadModel value),
   });
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult model(UserProfileAnonimHeadModel value),
-    @required TResult orElse(),
+  Result maybeMap<Result extends Object>({
+    Result model(UserProfileAnonimHeadModel value),
+    @required Result orElse(),
   });
   Map<String, dynamic> toJson();
-  @JsonKey(ignore: true)
   $UserProfileAnonimHeadCopyWith<UserProfileAnonimHead> get copyWith;
 }
 
@@ -165,7 +164,6 @@ class _$UserProfileAnonimHeadModel implements UserProfileAnonimHeadModel {
       const DeepCollectionEquality().hash(alias) ^
       const DeepCollectionEquality().hash(avatar);
 
-  @JsonKey(ignore: true)
   @override
   $UserProfileAnonimHeadModelCopyWith<UserProfileAnonimHeadModel>
       get copyWith =>
@@ -174,8 +172,8 @@ class _$UserProfileAnonimHeadModel implements UserProfileAnonimHeadModel {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>({
-    @required TResult model(String alias, AvatarModel avatar),
+  Result when<Result extends Object>({
+    @required Result model(String alias, AvatarModel avatar),
   }) {
     assert(model != null);
     return model(alias, avatar);
@@ -183,9 +181,9 @@ class _$UserProfileAnonimHeadModel implements UserProfileAnonimHeadModel {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>({
-    TResult model(String alias, AvatarModel avatar),
-    @required TResult orElse(),
+  Result maybeWhen<Result extends Object>({
+    Result model(String alias, AvatarModel avatar),
+    @required Result orElse(),
   }) {
     assert(orElse != null);
     if (model != null) {
@@ -196,8 +194,8 @@ class _$UserProfileAnonimHeadModel implements UserProfileAnonimHeadModel {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>({
-    @required TResult model(UserProfileAnonimHeadModel value),
+  Result map<Result extends Object>({
+    @required Result model(UserProfileAnonimHeadModel value),
   }) {
     assert(model != null);
     return model(this);
@@ -205,9 +203,9 @@ class _$UserProfileAnonimHeadModel implements UserProfileAnonimHeadModel {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>({
-    TResult model(UserProfileAnonimHeadModel value),
-    @required TResult orElse(),
+  Result maybeMap<Result extends Object>({
+    Result model(UserProfileAnonimHeadModel value),
+    @required Result orElse(),
   }) {
     assert(orElse != null);
     if (model != null) {
@@ -235,6 +233,5 @@ abstract class UserProfileAnonimHeadModel implements UserProfileAnonimHead {
   @override
   AvatarModel get avatar;
   @override
-  @JsonKey(ignore: true)
   $UserProfileAnonimHeadModelCopyWith<UserProfileAnonimHeadModel> get copyWith;
 }

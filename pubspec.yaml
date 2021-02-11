@@ -19,10 +19,8 @@ dependencies:
     path: packages/authentication
   appointment:
     path: packages/appointment
-  avatar:
-    path: packages/avatar
-  cypher:
-    path: packages/cypher
+  client:
+    path: packages/client
 
   # Scope packages
   network_manager:

@@ -1,4 +1,4 @@
 /// Repository interface for appointment
-  abstract class IAppointmentRepository {
-    // TODO: Define interface methods
-  }
+abstract class IAppointmentRepository {
+  // TODO: Define interface methods
+}

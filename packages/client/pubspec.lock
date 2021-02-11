@@ -30,7 +30,7 @@ packages:
     source: hosted
     version: "2.4.2"
   avatar:
-    dependency: transitive
+    dependency: "direct main"
     description:
       path: "../avatar"
       relative: true
@@ -120,13 +120,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.1.4"
-  client:
-    dependency: "direct main"
-    description:
-      path: "../client"
-      relative: true
-    source: path
-    version: "0.0.1+1"
   code_builder:
     dependency: transitive
     description:
@@ -227,8 +220,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.10.11"
+  freezed:
+    dependency: "direct dev"
+    description:
+      name: freezed
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.12.2"
   freezed_annotation:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: freezed_annotation
       url: "https://pub.dartlang.org"
@@ -298,7 +298,7 @@ packages:
     source: hosted
     version: "0.6.2"
   json_annotation:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: json_annotation
       url: "https://pub.dartlang.org"

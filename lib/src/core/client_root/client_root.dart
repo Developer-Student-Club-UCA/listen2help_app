@@ -1,4 +1,4 @@
-import 'models/user_profile_anonim.dart';
+import 'package:client/client.dart';
 
 /// Defines the client core properties
 class ClientRoot {
@@ -9,7 +9,7 @@ class ClientRoot {
 
   /// ? Evaluate if it's neccessary to include the device schema
 
-  final List<UserProfileAnonim> anonimProfiles;
+  final List<UserProfileAnonimModel> anonimProfiles;
 
   /// TODO: Therapist profile
   /// TODO: Active rooms

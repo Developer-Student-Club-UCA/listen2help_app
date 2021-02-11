@@ -11,5 +11,5 @@ class CypherData extends Equatable {
   final String data;
 
   @override
-  List<Object> get props => [data];
+  List<Object> get props => [id, data];
 }
