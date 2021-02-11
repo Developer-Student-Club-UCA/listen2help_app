@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 /// RoomsPage to show the user all
@@ -13,10 +14,13 @@ class RoomsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
-      body: const CustomScrollView(
+      body: CustomScrollView(
         slivers: [
-          SliverAppBar(
+          const SliverAppBar(
             title: Text(route),
+          ),
+          SliverList(
+            delegate: SliverChildListDelegate([]),
           ),
         ],
       ),

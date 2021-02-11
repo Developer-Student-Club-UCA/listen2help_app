@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'widgets/widgets.dart';
+
 /// AppointmentsPage to show the user the pending appointments
 class AppointmentsPage extends StatelessWidget {
   /// Static named route for page
@@ -14,12 +16,21 @@ class AppointmentsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final appointments = [0, 1, 2, 3];
+
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       body: CustomScrollView(
         slivers: [
-          SliverAppBar(
+          const SliverAppBar(
             title: Text(route),
+          ),
+          SliverList(
+            delegate: SliverChildListDelegate(
+              [
+                for (final appointment in appointments) const AppointmentCard(),
+              ],
+            ),
           ),
         ],
       ),

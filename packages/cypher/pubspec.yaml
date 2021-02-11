@@ -1,0 +1,33 @@
+name: cypher
+description: Dart package to manage cypher data and domain layers.
+version: 0.0.1+1
+
+environment:
+  sdk: ">=2.9.0 <3.0.0"
+
+dependencies:
+  # Scope Packages
+  errors:
+    git:
+      url: git://github.com/NoScopeDevs/errors
+  network_manager:
+    git:
+      url: git://github.com/NoScopeDevs/network_manager
+
+  equatable: ^1.2.6
+  dartz: ^0.9.2
+  json_annotation: ^3.1.1
+  meta:
+  path:
+
+dev_dependencies:
+  # code generators
+  build_runner:
+  json_serializable: ^3.5.1
+
+  # testing
+  mockito:
+  test:
+
+  # static analysis
+  very_good_analysis:

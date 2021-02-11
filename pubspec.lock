@@ -15,6 +15,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.40.6"
+  appointment:
+    dependency: "direct main"
+    description:
+      path: "packages/appointment"
+      relative: true
+    source: path
+    version: "0.0.1+1"
   archive:
     dependency: transitive
     description:
@@ -43,6 +50,13 @@ packages:
       relative: true
     source: path
     version: "1.0.0"
+  avatar:
+    dependency: transitive
+    description:
+      path: "packages/avatar"
+      relative: true
+    source: path
+    version: "0.0.1+1"
   boolean_selector:
     dependency: transitive
     description:
@@ -134,6 +148,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.2.0"
+  client:
+    dependency: "direct main"
+    description:
+      path: "packages/client"
+      relative: true
+    source: path
+    version: "0.0.1+1"
   clock:
     dependency: transitive
     description:
@@ -183,6 +204,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.0"
+  cypher:
+    dependency: transitive
+    description:
+      path: "packages/cypher"
+      relative: true
+    source: path
+    version: "0.0.1+1"
   dart_style:
     dependency: transitive
     description:
@@ -224,7 +252,7 @@ packages:
       name: equatable
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.5"
+    version: "1.2.6"
   errors:
     dependency: transitive
     description:

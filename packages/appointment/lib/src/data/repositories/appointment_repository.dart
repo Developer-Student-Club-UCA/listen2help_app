@@ -1,14 +1,21 @@
-import 'package:dartz/dartz.dart';
-import 'package:errors/errors.dart';
+import 'package:meta/meta.dart';
 
-// Domain
-import '../../domain/repositories/iappointment_repository.dart';
+import '../../domain/domain.dart';
 
-/// AppointmentRepository implementation
+import '../datasources/local_data_source.dart';
+import '../datasources/remote_data_source.dart';
+
+/// Appointment repository implementation
 class AppointmentRepository implements IAppointmentRepository {
-  @override
-  Future<Either<Failure, Object>> requestAppointment() {
-    // TODO: implement requestAppointment
-    throw UnimplementedError();
-  }
+  /// Appointment repository constructor
+  AppointmentRepository({
+    @required this.localDataSource,
+    @required this.remoteDataSource,
+  })  : assert(localDataSource != null),
+        assert(remoteDataSource != null);
+
+  final LocalDataSource localDataSource;
+  final RemoteDataSource remoteDataSource;
+
+  // TODO: Implement [IAppointmentRepository] methods
 }
