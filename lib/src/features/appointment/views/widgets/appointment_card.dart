@@ -8,7 +8,7 @@ import '../../../../core/extensions/date_extension.dart';
 import '../appointments_page.i18n.dart';
 
 ///
-/// * AppointmentCard
+/// * [AppointmentCard]
 ///
 class AppointmentCard extends StatelessWidget {
   /// Creates a [Card] to display an appointment and its information

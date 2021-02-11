@@ -7,8 +7,13 @@ export 'package:client/client.dart' show UserProfileAnonimModel;
 
 part 'appointment_model.g.dart';
 
+///
+/// * [AppointmentModel
+///
 @JsonSerializable()
 class AppointmentModel implements Appointment {
+  /// Contains the information that the therapist needs
+  /// to evaluate to accept the patient who requested it
   AppointmentModel({
     @required this.deviceId,
     @required this.createdDate,
@@ -17,10 +22,12 @@ class AppointmentModel implements Appointment {
     @required this.dossierData,
   });
 
+  /// JSON deserializer constructor
   factory AppointmentModel.fromJson(Map<String, dynamic> json) {
     return _$AppointmentModelFromJson(json);
   }
 
+  /// JSON serializer method
   Map<String, dynamic> toJson() => _$AppointmentModelToJson(this);
 
   @override

@@ -6,15 +6,20 @@ import 'package:meta/meta.dart';
 
 import '../../domain/entities/appointment.dart'
     show Appointment, UserProfileAnonim;
-import '../models/appointment_model.dart'
-    show AppointmentModel, UserProfileAnonimModel;
+import '../models/appointment_model.dart' show AppointmentModel;
 
+/// Defines all the methods any remote data source should have
 abstract class IRemoteDataSource {
+  /// Gets all the appointments in the appointment queue
   Future<List<Appointment>> getAppointments();
+
+  /// Requests a new appointment to the server, the latter adds it to the queue
   Future<void> requestAppointment(UserProfileAnonim profile);
 }
 
+/// Implements [IRemoteDataSource]
 class RemoteDataSource implements IRemoteDataSource {
+  /// Gets the data from a remote source, needs the url and HTTP client
   RemoteDataSource({
     @required String url,
     @required Dio client,
@@ -48,7 +53,7 @@ class RemoteDataSource implements IRemoteDataSource {
   }
 
   @override
-  Future<void> requestAppointment(UserProfileAnonimModel profile) async {
+  Future<void> requestAppointment(UserProfileAnonim profile) async {
     try {
       final response = await _client.get('$_url/new');
 

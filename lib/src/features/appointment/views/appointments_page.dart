@@ -21,6 +21,7 @@ class AppointmentsPage extends StatelessWidget {
     );
   }
 
+  /// ! Fake data: remove when connected to backend
   final appointments = [
     AppointmentModel(
       deviceId: '983273',

@@ -1,13 +1,12 @@
-import 'package:client/client.dart';
-import 'package:dio/dio.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:appointment/appointment.dart';
-import 'package:listen2help/src/core/globals/environment.dart';
-import 'package:listen2help/src/core/providers/dio_provider.dart';
-import 'package:listen2help/src/features/appointment/views/appointments_page.i18n.dart';
+import 'package:client/client.dart';
 
+import '../../../core/globals/environment.dart';
+import '../../../core/providers/dio_provider.dart';
 import '../../../core/providers/network_manager_provider.dart';
+import '../views/appointments_page.i18n.dart';
 
 import 'appointment_state.dart';
 

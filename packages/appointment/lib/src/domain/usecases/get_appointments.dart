@@ -7,9 +7,14 @@ import 'package:appointment/appointment.dart';
 
 import '../repositories/iappointment_repository.dart';
 
+///
+/// * [GetAppointments] use case
+///
 class GetAppointments {
+  /// Gets all the active appointment requests
   GetAppointments({@required this.repository}) : assert(repository != null);
 
+  /// Repository used to get data
   final IAppointmentRepository repository;
 
   /// Callable class method
