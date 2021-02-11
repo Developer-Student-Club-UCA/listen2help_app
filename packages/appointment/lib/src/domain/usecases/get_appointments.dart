@@ -1,3 +1,4 @@
+import 'package:appointment/appointment.dart';
 import 'package:dartz/dartz.dart';
 import 'package:errors/errors.dart';
 import 'package:meta/meta.dart';
@@ -10,7 +11,7 @@ class GetAppointments {
   final IAppointmentRepository repository;
 
   /// Callable class method
-  Future<Either<Failure, Object>> call() async {
-    /// TODO: Call specific repository method
+  Future<Either<Failure, List<Appointment>>> call() async {
+    return await repository.getAppointments();
   }
 }
