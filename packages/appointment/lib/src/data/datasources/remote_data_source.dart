@@ -4,9 +4,10 @@ import 'package:dio/dio.dart';
 import 'package:errors/errors.dart';
 import 'package:meta/meta.dart';
 
-import '../../domain/domain.dart' show Appointment, UserProfileAnonim;
-
-import '../models/appointment_model.dart';
+import '../../domain/entities/appointment.dart'
+    show Appointment, UserProfileAnonim;
+import '../models/appointment_model.dart'
+    show AppointmentModel, UserProfileAnonimModel;
 
 abstract class IRemoteDataSource {
   Future<List<Appointment>> getAppointments();
@@ -24,7 +25,7 @@ class RemoteDataSource implements IRemoteDataSource {
   final Dio _client;
 
   @override
-  Future<List<Appointment>> getAppointments() async {
+  Future<List<AppointmentModel>> getAppointments() async {
     try {
       final response = await _client.get('$_url');
 
@@ -47,7 +48,7 @@ class RemoteDataSource implements IRemoteDataSource {
   }
 
   @override
-  Future<void> requestAppointment(UserProfileAnonim profile) async {
+  Future<void> requestAppointment(UserProfileAnonimModel profile) async {
     try {
       final response = await _client.get('$_url/new');
 

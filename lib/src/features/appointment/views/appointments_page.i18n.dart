@@ -2,6 +2,7 @@ import 'package:i18n_extension/i18n_extension.dart';
 
 const kViewDetailsMessage = 'View details';
 const kAppointmentsMessage = 'Appointments';
+const kServerFailure = 'There was a server error. Try again.';
 
 /// This extension method contains all
 /// the strings for the Appointment view
@@ -14,6 +15,10 @@ extension AppointmentStrings on String {
       {
         'en_us': kViewDetailsMessage,
         'es_es': 'Ver detalles',
+      } +
+      {
+        'en_us': kServerFailure,
+        'es_es': 'Hubo un error en el servidor. Intenta de nuevo.',
       };
 
   /// Getter to translate the string

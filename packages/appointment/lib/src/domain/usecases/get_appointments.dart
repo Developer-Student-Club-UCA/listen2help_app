@@ -1,7 +1,9 @@
-import 'package:appointment/appointment.dart';
 import 'package:dartz/dartz.dart';
-import 'package:errors/errors.dart';
 import 'package:meta/meta.dart';
+
+import 'package:errors/errors.dart';
+
+import 'package:appointment/appointment.dart';
 
 import '../repositories/iappointment_repository.dart';
 

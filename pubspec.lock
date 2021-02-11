@@ -205,7 +205,7 @@ packages:
     source: hosted
     version: "1.0.0"
   cypher:
-    dependency: transitive
+    dependency: "direct main"
     description:
       path: "packages/cypher"
       relative: true
@@ -240,7 +240,7 @@ packages:
     source: hosted
     version: "0.3.4"
   dio:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: dio
       url: "https://pub.dartlang.org"

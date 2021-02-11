@@ -3,6 +3,8 @@ import 'package:meta/meta.dart';
 
 import '../../domain/entities/appointment.dart';
 
+export 'package:client/client.dart' show UserProfileAnonimModel;
+
 part 'appointment_model.g.dart';
 
 @JsonSerializable()

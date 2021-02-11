@@ -9,7 +9,7 @@ part 'user_profile_anonim.g.dart';
 
 @freezed
 abstract class UserProfileAnonim with _$UserProfileAnonim {
-  const factory UserProfileAnonim.model({
+  const factory UserProfileAnonim({
     @required UserProfileAnonimHeadModel head,
     @required CypherDataKeyModel dossierKey,
     @required CypherDataModel dossierData,
