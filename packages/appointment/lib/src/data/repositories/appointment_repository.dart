@@ -1,8 +1,8 @@
-import 'package:client/client.dart';
 import 'package:dartz/dartz.dart';
-import 'package:errors/errors.dart';
-
 import 'package:meta/meta.dart';
+
+import 'package:client/client.dart';
+import 'package:errors/errors.dart';
 import 'package:network_manager/network_manager.dart';
 
 import '../../domain/domain.dart' show IAppointmentRepository;
