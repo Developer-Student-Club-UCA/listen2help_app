@@ -1,10 +1,11 @@
 import 'package:equatable/equatable.dart';
 
-import 'package:client/client.dart';
-import 'package:cypher/cypher.dart';
+import 'package:client/client.dart' show UserProfileAnonimHead;
+import 'package:cypher/cypher.dart' show CypherData;
 
-export 'package:client/client.dart';
-export 'package:cypher/cypher.dart';
+export 'package:client/client.dart'
+    show UserProfileAnonim, UserProfileAnonimHead, UserProfileAnonimHeadModel;
+export 'package:cypher/cypher.dart' show CypherData, CypherDataModel;
 
 abstract class Appointment extends Equatable {
   Appointment({

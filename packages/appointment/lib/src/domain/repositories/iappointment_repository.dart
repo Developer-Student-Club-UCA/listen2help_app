@@ -10,5 +10,5 @@ abstract class IAppointmentRepository {
   Future<Either<Failure, List<Appointment>>> getAppointments();
 
   /// Create a new appointment for the queue
-  Future<Either<Failure, void>> requestAppointment(UserProfileAnonim profile);
+  Future<Option<Failure>> requestAppointment(UserProfileAnonim profile);
 }

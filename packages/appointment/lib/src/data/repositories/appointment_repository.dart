@@ -3,6 +3,7 @@ import 'package:dartz/dartz.dart';
 import 'package:errors/errors.dart';
 
 import 'package:meta/meta.dart';
+import 'package:network_manager/network_manager.dart';
 
 import '../../domain/domain.dart' show IAppointmentRepository;
 
@@ -13,21 +14,41 @@ import '../models/appointment_model.dart';
 class AppointmentRepository implements IAppointmentRepository {
   /// Appointment repository constructor
   AppointmentRepository({
-    @required this.remoteDataSource,
-  }) : assert(remoteDataSource != null);
+    @required RemoteDataSource remoteDataSource,
+    @required NetworkManager networkManager,
+  })  : assert(remoteDataSource != null),
+        assert(networkManager != null),
+        _remoteDataSource = remoteDataSource,
+        _networkManager = networkManager;
 
-  final RemoteDataSource remoteDataSource;
-
-  // TODO: Implement [IAppointmentRepository] methods
+  final NetworkManager _networkManager;
+  final RemoteDataSource _remoteDataSource;
 
   @override
-  Future<Either<Failure, List<AppointmentModel>>> getAppointments() {}
+  Future<Either<Failure, List<AppointmentModel>>> getAppointments() async {
+    if (await _networkManager.isConnected) {
+      try {
+        final appointments = await _remoteDataSource.getAppointments();
+        return Right(appointments);
+      } on ServerException {
+        return Left(ServerFailure());
+      }
+    } else {
+      return Left(ServerFailure());
+    }
+  }
 
   @override
-  Future<Either<Failure, void>> requestAppointment(
-    UserProfileAnonim profile,
-  ) {
-    // TODO: implement requestAppointment
-    throw UnimplementedError();
+  Future<Option<Failure>> requestAppointment(UserProfileAnonim profile) async {
+    if (await _networkManager.isConnected) {
+      try {
+        await _remoteDataSource.getAppointments();
+        return const None();
+      } on ServerException {
+        return Some(ServerFailure());
+      }
+    } else {
+      return Some(ServerFailure());
+    }
   }
 }

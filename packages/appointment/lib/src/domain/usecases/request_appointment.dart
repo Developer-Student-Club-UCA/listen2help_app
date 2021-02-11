@@ -11,7 +11,7 @@ class GetAppointments {
   final IAppointmentRepository repository;
 
   /// Callable class method
-  Future<Either<Failure, void>> call(UserProfileAnonim profile) async {
+  Future<Option<Failure>> call(UserProfileAnonim profile) async {
     return await repository.requestAppointment(profile);
   }
 }

@@ -6,7 +6,11 @@ environment:
   sdk: ">=2.9.0 <3.0.0"
 
 dependencies:
-  # Scope Packages
+  client:
+    path: ../client
+  cypher:
+    path: ../cypher
+
   errors:
     git:
       url: git://github.com/NoScopeDevs/errors
@@ -14,24 +18,19 @@ dependencies:
     git:
       url: git://github.com/NoScopeDevs/network_manager
 
-  cypher:
-    path: ../cypher
-  client:
-    path: ../client
-
-  equatable: ^1.2.6
   dartz: ^0.9.2
-  meta:
-  path:
+  dio: ^3.0.10
+  equatable: ^1.2.6
+  meta: any
+  path: any
 
 dev_dependencies:
-  # code generators
-  build_runner:
+  build_runner: any
   json_serializable: ^3.5.1
 
   # testing
-  mockito:
-  test:
+  mockito: any
+  test: any
 
   # static analysis
-  very_good_analysis:
+  very_good_analysis: any
