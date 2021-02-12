@@ -8,7 +8,7 @@ export 'package:client/client.dart' show UserProfileAnonimModel;
 part 'appointment_model.g.dart';
 
 ///
-/// * [AppointmentModel
+/// * [AppointmentModel]
 ///
 @JsonSerializable()
 class AppointmentModel implements Appointment {
