@@ -14,8 +14,15 @@ class _$AppointmentStateTearOff {
   const _$AppointmentStateTearOff();
 
 // ignore: unused_element
-  Data call() {
-    return const Data();
+  Loaded loaded({@required List<AppointmentModel> appointments}) {
+    return Loaded(
+      appointments: appointments,
+    );
+  }
+
+// ignore: unused_element
+  Requested requested() {
+    return const Requested();
   }
 
 // ignore: unused_element
@@ -43,30 +50,34 @@ const $AppointmentState = _$AppointmentStateTearOff();
 /// @nodoc
 mixin _$AppointmentState {
   @optionalTypeArgs
-  TResult when<TResult extends Object>(
-    TResult $default(), {
+  TResult when<TResult extends Object>({
+    @required TResult loaded(List<AppointmentModel> appointments),
+    @required TResult requested(),
     @required TResult initial(),
     @required TResult loading(),
     @required TResult error(String message),
   });
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>(
-    TResult $default(), {
+  TResult maybeWhen<TResult extends Object>({
+    TResult loaded(List<AppointmentModel> appointments),
+    TResult requested(),
     TResult initial(),
     TResult loading(),
     TResult error(String message),
     @required TResult orElse(),
   });
   @optionalTypeArgs
-  TResult map<TResult extends Object>(
-    TResult $default(Data value), {
+  TResult map<TResult extends Object>({
+    @required TResult loaded(Loaded value),
+    @required TResult requested(Requested value),
     @required TResult initial(Initial value),
     @required TResult loading(Loading value),
     @required TResult error(Error value),
   });
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>(
-    TResult $default(Data value), {
+  TResult maybeMap<TResult extends Object>({
+    TResult loaded(Loaded value),
+    TResult requested(Requested value),
     TResult initial(Initial value),
     TResult loading(Loading value),
     TResult error(Error value),
@@ -92,33 +103,169 @@ class _$AppointmentStateCopyWithImpl<$Res>
 }
 
 /// @nodoc
-abstract class $DataCopyWith<$Res> {
-  factory $DataCopyWith(Data value, $Res Function(Data) then) =
-      _$DataCopyWithImpl<$Res>;
+abstract class $LoadedCopyWith<$Res> {
+  factory $LoadedCopyWith(Loaded value, $Res Function(Loaded) then) =
+      _$LoadedCopyWithImpl<$Res>;
+  $Res call({List<AppointmentModel> appointments});
 }
 
 /// @nodoc
-class _$DataCopyWithImpl<$Res> extends _$AppointmentStateCopyWithImpl<$Res>
-    implements $DataCopyWith<$Res> {
-  _$DataCopyWithImpl(Data _value, $Res Function(Data) _then)
-      : super(_value, (v) => _then(v as Data));
+class _$LoadedCopyWithImpl<$Res> extends _$AppointmentStateCopyWithImpl<$Res>
+    implements $LoadedCopyWith<$Res> {
+  _$LoadedCopyWithImpl(Loaded _value, $Res Function(Loaded) _then)
+      : super(_value, (v) => _then(v as Loaded));
 
   @override
-  Data get _value => super._value as Data;
+  Loaded get _value => super._value as Loaded;
+
+  @override
+  $Res call({
+    Object appointments = freezed,
+  }) {
+    return _then(Loaded(
+      appointments: appointments == freezed
+          ? _value.appointments
+          : appointments as List<AppointmentModel>,
+    ));
+  }
 }
 
 /// @nodoc
-class _$Data implements Data {
-  const _$Data();
+class _$Loaded implements Loaded {
+  const _$Loaded({@required this.appointments}) : assert(appointments != null);
+
+  @override
+  final List<AppointmentModel> appointments;
 
   @override
   String toString() {
-    return 'AppointmentState()';
+    return 'AppointmentState.loaded(appointments: $appointments)';
   }
 
   @override
   bool operator ==(dynamic other) {
-    return identical(this, other) || (other is Data);
+    return identical(this, other) ||
+        (other is Loaded &&
+            (identical(other.appointments, appointments) ||
+                const DeepCollectionEquality()
+                    .equals(other.appointments, appointments)));
+  }
+
+  @override
+  int get hashCode =>
+      runtimeType.hashCode ^ const DeepCollectionEquality().hash(appointments);
+
+  @JsonKey(ignore: true)
+  @override
+  $LoadedCopyWith<Loaded> get copyWith =>
+      _$LoadedCopyWithImpl<Loaded>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object>({
+    @required TResult loaded(List<AppointmentModel> appointments),
+    @required TResult requested(),
+    @required TResult initial(),
+    @required TResult loading(),
+    @required TResult error(String message),
+  }) {
+    assert(loaded != null);
+    assert(requested != null);
+    assert(initial != null);
+    assert(loading != null);
+    assert(error != null);
+    return loaded(appointments);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object>({
+    TResult loaded(List<AppointmentModel> appointments),
+    TResult requested(),
+    TResult initial(),
+    TResult loading(),
+    TResult error(String message),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (loaded != null) {
+      return loaded(appointments);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object>({
+    @required TResult loaded(Loaded value),
+    @required TResult requested(Requested value),
+    @required TResult initial(Initial value),
+    @required TResult loading(Loading value),
+    @required TResult error(Error value),
+  }) {
+    assert(loaded != null);
+    assert(requested != null);
+    assert(initial != null);
+    assert(loading != null);
+    assert(error != null);
+    return loaded(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object>({
+    TResult loaded(Loaded value),
+    TResult requested(Requested value),
+    TResult initial(Initial value),
+    TResult loading(Loading value),
+    TResult error(Error value),
+    @required TResult orElse(),
+  }) {
+    assert(orElse != null);
+    if (loaded != null) {
+      return loaded(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class Loaded implements AppointmentState {
+  const factory Loaded({@required List<AppointmentModel> appointments}) =
+      _$Loaded;
+
+  List<AppointmentModel> get appointments;
+  @JsonKey(ignore: true)
+  $LoadedCopyWith<Loaded> get copyWith;
+}
+
+/// @nodoc
+abstract class $RequestedCopyWith<$Res> {
+  factory $RequestedCopyWith(Requested value, $Res Function(Requested) then) =
+      _$RequestedCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class _$RequestedCopyWithImpl<$Res> extends _$AppointmentStateCopyWithImpl<$Res>
+    implements $RequestedCopyWith<$Res> {
+  _$RequestedCopyWithImpl(Requested _value, $Res Function(Requested) _then)
+      : super(_value, (v) => _then(v as Requested));
+
+  @override
+  Requested get _value => super._value as Requested;
+}
+
+/// @nodoc
+class _$Requested implements Requested {
+  const _$Requested();
+
+  @override
+  String toString() {
+    return 'AppointmentState.requested()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) || (other is Requested);
   }
 
   @override
@@ -126,69 +273,75 @@ class _$Data implements Data {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>(
-    TResult $default(), {
+  TResult when<TResult extends Object>({
+    @required TResult loaded(List<AppointmentModel> appointments),
+    @required TResult requested(),
     @required TResult initial(),
     @required TResult loading(),
     @required TResult error(String message),
   }) {
-    assert($default != null);
+    assert(loaded != null);
+    assert(requested != null);
     assert(initial != null);
     assert(loading != null);
     assert(error != null);
-    return $default();
+    return requested();
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>(
-    TResult $default(), {
+  TResult maybeWhen<TResult extends Object>({
+    TResult loaded(List<AppointmentModel> appointments),
+    TResult requested(),
     TResult initial(),
     TResult loading(),
     TResult error(String message),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if ($default != null) {
-      return $default();
+    if (requested != null) {
+      return requested();
     }
     return orElse();
   }
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>(
-    TResult $default(Data value), {
+  TResult map<TResult extends Object>({
+    @required TResult loaded(Loaded value),
+    @required TResult requested(Requested value),
     @required TResult initial(Initial value),
     @required TResult loading(Loading value),
     @required TResult error(Error value),
   }) {
-    assert($default != null);
+    assert(loaded != null);
+    assert(requested != null);
     assert(initial != null);
     assert(loading != null);
     assert(error != null);
-    return $default(this);
+    return requested(this);
   }
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>(
-    TResult $default(Data value), {
+  TResult maybeMap<TResult extends Object>({
+    TResult loaded(Loaded value),
+    TResult requested(Requested value),
     TResult initial(Initial value),
     TResult loading(Loading value),
     TResult error(Error value),
     @required TResult orElse(),
   }) {
     assert(orElse != null);
-    if ($default != null) {
-      return $default(this);
+    if (requested != null) {
+      return requested(this);
     }
     return orElse();
   }
 }
 
-abstract class Data implements AppointmentState {
-  const factory Data() = _$Data;
+abstract class Requested implements AppointmentState {
+  const factory Requested() = _$Requested;
 }
 
 /// @nodoc
@@ -226,13 +379,15 @@ class _$Initial implements Initial {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>(
-    TResult $default(), {
+  TResult when<TResult extends Object>({
+    @required TResult loaded(List<AppointmentModel> appointments),
+    @required TResult requested(),
     @required TResult initial(),
     @required TResult loading(),
     @required TResult error(String message),
   }) {
-    assert($default != null);
+    assert(loaded != null);
+    assert(requested != null);
     assert(initial != null);
     assert(loading != null);
     assert(error != null);
@@ -241,8 +396,9 @@ class _$Initial implements Initial {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>(
-    TResult $default(), {
+  TResult maybeWhen<TResult extends Object>({
+    TResult loaded(List<AppointmentModel> appointments),
+    TResult requested(),
     TResult initial(),
     TResult loading(),
     TResult error(String message),
@@ -257,13 +413,15 @@ class _$Initial implements Initial {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>(
-    TResult $default(Data value), {
+  TResult map<TResult extends Object>({
+    @required TResult loaded(Loaded value),
+    @required TResult requested(Requested value),
     @required TResult initial(Initial value),
     @required TResult loading(Loading value),
     @required TResult error(Error value),
   }) {
-    assert($default != null);
+    assert(loaded != null);
+    assert(requested != null);
     assert(initial != null);
     assert(loading != null);
     assert(error != null);
@@ -272,8 +430,9 @@ class _$Initial implements Initial {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>(
-    TResult $default(Data value), {
+  TResult maybeMap<TResult extends Object>({
+    TResult loaded(Loaded value),
+    TResult requested(Requested value),
     TResult initial(Initial value),
     TResult loading(Loading value),
     TResult error(Error value),
@@ -326,13 +485,15 @@ class _$Loading implements Loading {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>(
-    TResult $default(), {
+  TResult when<TResult extends Object>({
+    @required TResult loaded(List<AppointmentModel> appointments),
+    @required TResult requested(),
     @required TResult initial(),
     @required TResult loading(),
     @required TResult error(String message),
   }) {
-    assert($default != null);
+    assert(loaded != null);
+    assert(requested != null);
     assert(initial != null);
     assert(loading != null);
     assert(error != null);
@@ -341,8 +502,9 @@ class _$Loading implements Loading {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>(
-    TResult $default(), {
+  TResult maybeWhen<TResult extends Object>({
+    TResult loaded(List<AppointmentModel> appointments),
+    TResult requested(),
     TResult initial(),
     TResult loading(),
     TResult error(String message),
@@ -357,13 +519,15 @@ class _$Loading implements Loading {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>(
-    TResult $default(Data value), {
+  TResult map<TResult extends Object>({
+    @required TResult loaded(Loaded value),
+    @required TResult requested(Requested value),
     @required TResult initial(Initial value),
     @required TResult loading(Loading value),
     @required TResult error(Error value),
   }) {
-    assert($default != null);
+    assert(loaded != null);
+    assert(requested != null);
     assert(initial != null);
     assert(loading != null);
     assert(error != null);
@@ -372,8 +536,9 @@ class _$Loading implements Loading {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>(
-    TResult $default(Data value), {
+  TResult maybeMap<TResult extends Object>({
+    TResult loaded(Loaded value),
+    TResult requested(Requested value),
     TResult initial(Initial value),
     TResult loading(Loading value),
     TResult error(Error value),
@@ -448,13 +613,15 @@ class _$Error implements Error {
 
   @override
   @optionalTypeArgs
-  TResult when<TResult extends Object>(
-    TResult $default(), {
+  TResult when<TResult extends Object>({
+    @required TResult loaded(List<AppointmentModel> appointments),
+    @required TResult requested(),
     @required TResult initial(),
     @required TResult loading(),
     @required TResult error(String message),
   }) {
-    assert($default != null);
+    assert(loaded != null);
+    assert(requested != null);
     assert(initial != null);
     assert(loading != null);
     assert(error != null);
@@ -463,8 +630,9 @@ class _$Error implements Error {
 
   @override
   @optionalTypeArgs
-  TResult maybeWhen<TResult extends Object>(
-    TResult $default(), {
+  TResult maybeWhen<TResult extends Object>({
+    TResult loaded(List<AppointmentModel> appointments),
+    TResult requested(),
     TResult initial(),
     TResult loading(),
     TResult error(String message),
@@ -479,13 +647,15 @@ class _$Error implements Error {
 
   @override
   @optionalTypeArgs
-  TResult map<TResult extends Object>(
-    TResult $default(Data value), {
+  TResult map<TResult extends Object>({
+    @required TResult loaded(Loaded value),
+    @required TResult requested(Requested value),
     @required TResult initial(Initial value),
     @required TResult loading(Loading value),
     @required TResult error(Error value),
   }) {
-    assert($default != null);
+    assert(loaded != null);
+    assert(requested != null);
     assert(initial != null);
     assert(loading != null);
     assert(error != null);
@@ -494,8 +664,9 @@ class _$Error implements Error {
 
   @override
   @optionalTypeArgs
-  TResult maybeMap<TResult extends Object>(
-    TResult $default(Data value), {
+  TResult maybeMap<TResult extends Object>({
+    TResult loaded(Loaded value),
+    TResult requested(Requested value),
     TResult initial(Initial value),
     TResult loading(Loading value),
     TResult error(Error value),

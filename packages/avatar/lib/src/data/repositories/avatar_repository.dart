@@ -9,13 +9,15 @@ import '../datasources/remote_data_source.dart';
 class AvatarRepository implements IAvatarRepository {
   /// Avatar repository constructor
   AvatarRepository({
-    @required this.localDataSource,
-    @required this.remoteDataSource,
+    @required LocalDataSource localDataSource,
+    @required RemoteDataSource remoteDataSource,
   })  : assert(localDataSource != null),
-        assert(remoteDataSource != null);
+        assert(remoteDataSource != null),
+        _localDataSource = localDataSource,
+        _remoteDataSource = remoteDataSource;
 
-  final LocalDataSource localDataSource;
-  final RemoteDataSource remoteDataSource;
+  final LocalDataSource _localDataSource;
+  final RemoteDataSource _remoteDataSource;
 
   // TODO: Implement [IAvatarRepository] methods
 }

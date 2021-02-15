@@ -1,13 +1,20 @@
 import 'package:equatable/equatable.dart';
 import 'package:meta/meta.dart';
 
-class CypherData extends Equatable {
+///
+/// * [CypherData]
+///
+abstract class CypherData extends Equatable {
+  /// Defines the properties of encrypted data
   CypherData({
-    @required this.id,
+    this.id,
     @required this.data,
   });
 
+  /// Identifier of the key in database
   final String id;
+
+  /// Encrypted data
   final String data;
 
   @override

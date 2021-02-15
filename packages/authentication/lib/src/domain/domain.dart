@@ -1,4 +1,4 @@
-//TODO: Export entities
+// TODO: Export entities
 // export 'entities/your_entity.dart';
 
 // Export repositories
